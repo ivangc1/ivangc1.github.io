@@ -1,20 +1,34 @@
+let juegoIniciado = false;
+
 document.addEventListener('DOMContentLoaded', () => {
+    const inicio = document.getElementById('inicio');
     const paredes = document.querySelectorAll('.pared');
     const fin = document.getElementById('fin');
 
-    paredes.forEach(pared => {
-        pared.addEventListener('mouseover', perder);
+    inicio.addEventListener('click', () => {
+        juegoIniciado = true;
+        inicio.style.backgroundColor = '#ddd'; // Cambia el color para indicar que el juego ha comenzado
     });
 
-    fin.addEventListener('mouseover', ganar);
+    paredes.forEach(pared => {
+        pared.addEventListener('mouseover', () => {
+            if (juegoIniciado) perder();
+        });
+    });
+
+    fin.addEventListener('mouseover', () => {
+        if (juegoIniciado) ganar();
+    });
 
     function perder() {
         alert('¡Has perdido!');
-        // Aquí puedes añadir cualquier otra lógica que quieras ejecutar cuando el jugador pierde
+        juegoIniciado = false;
+        inicio.style.backgroundColor = '#00ff00'; // Restablece el color del inicio
     }
 
     function ganar() {
         alert('¡Has ganado!');
-        // Aquí puedes añadir cualquier otra lógica que quieras ejecutar cuando el jugador gana
+        juegoIniciado = false;
+        inicio.style.backgroundColor = '#00ff00'; // Restablece el color del inicio
     }
 });
