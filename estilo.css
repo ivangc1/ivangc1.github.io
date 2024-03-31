@@ -89,7 +89,18 @@ html, body {
 }
 
 #fin {
-    right: 4vmin;
-    bottom: 4vmin;
+    position: fixed; /* Cambia a posición fija para asegurar visibilidad */
+    bottom: 10%; /* Posiciona el botón hacia el final, pero dentro del viewport */
+    right: 10%; /* Mantiene el botón dentro del área visible */
+    width: 50px; /* Tamaño adecuado para interacción táctil */
+    height: 50px; /* Tamaño adecuado para interacción táctil */
+    background-color: #4CAF50; /* Color distintivo */
+    color: white;
+    border-radius: 50%; /* Estilo circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px; /* Ajusta el tamaño del texto según sea necesario */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
 }
 
