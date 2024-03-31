@@ -67,3 +67,29 @@ html, body {
     bottom: 10px;
     right: 10px;
 }
+.inicio-fin {
+    position: absolute;
+    width: 8vmin; /* Usa vmin para asegurar que el tamaño sea responsive tanto en ancho como en alto */
+    height: 8vmin;
+    background-color: #4CAF50; /* Color verde para inicio/fin */
+    color: #fff;
+    text-align: center;
+    font-size: 2vmin;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10; /* Asegura que esté por encima de las paredes */
+}
+
+#inicio {
+    top: 4vmin;
+    left: 4vmin;
+}
+
+#fin {
+    right: 4vmin;
+    bottom: 4vmin;
+}
+
